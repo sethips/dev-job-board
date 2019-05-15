@@ -8,7 +8,7 @@
     height: 70px;
     display: grid;
     grid-template-columns: auto 1fr;
-    margin-bottom: 24px;
+    margin-bottom: 24px !important;
     font-weight: 400;
 }
 .nav__icon {
