@@ -21,8 +21,7 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
-//disabled for testing.....
-//app.use('/api/jobs', require('./routes/api/jobs'));
+app.use('/api/jobs', require('./routes/api/jobs'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
@@ -30,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
   console.log("in production");
   app.use(express.static(path.join(__dirname, 'client/build')));
 
-  app.get('', (req, res) => {
+  app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 
@@ -39,18 +38,16 @@ if (process.env.NODE_ENV === 'production') {
   //   console.log("JOBS REQUESTED!!!");
   //   res.json("HERES YOUR JOBS!!!");
   // });
-  const Job = require('./models/Job');
-  app.get('/api/jobs', (req, res) => {
-    Job.find()
-      .then(jobs => res.json(jobs));
-    // Job.find()
-    //   .then(res => console.log(res));
-  });
+  // const Job = require('./models/Job');
+  // app.get('/api/jobs', (req, res) => {
+  //   Job.find()
+  //     .then(jobs => res.json(jobs));
+  // });
 
   //end testing...
-} else {
-  app.use('/api/jobs', require('./routes/api/jobs'));
 }
+
+
 
 const port = process.env.PORT || 5000;
 
