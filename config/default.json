@@ -1,4 +1,0 @@
-{
-  "mongoURI": "PUT MONGODB URI HERE",
-  "jwtSecret": "sl_myJwtSecret"
-}
