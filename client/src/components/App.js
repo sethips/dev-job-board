@@ -38,7 +38,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // this.getJobData();
+    this.getJobData();
     window.addEventListener("scroll", () => {
       this.setState({ scrollY: window.scrollY })
     });
@@ -81,7 +81,6 @@ class App extends React.Component {
 
     return (
       <div>
-        <button onClick={this.getJobData}>GET JOBS</button>
         <div className="navbar-container">
           <div className="navbar content">
             <h2 className="nav__logo">Dev Job Board</h2>
