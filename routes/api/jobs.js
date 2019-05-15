@@ -8,6 +8,7 @@ const Job = require('../../models/Job');
 // @desc    Get All Items
 // @access  Public
 router.get('/', (req, res) => {
+  console.log("JOBS REQUESTED");
   Job.find()
     .then(jobs => res.json(jobs));
   // Job.find()
