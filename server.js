@@ -33,11 +33,14 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
+
+  app.use('/api/jobs', require('./routes/api/jobs'));
+
   //testing endpoint....
-  app.get('/api/jobs', (req, res) => {
-    console.log("JOBS REQUESTED!!!");
-    res.json("HERES YOUR JOBS!!!");
-  });
+  // app.get('/api/jobs', (req, res) => {
+  //   console.log("JOBS REQUESTED!!!");
+  //   res.json("HERES YOUR JOBS!!!");
+  // });
 
   //end testing...
 } else {
