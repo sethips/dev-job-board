@@ -34,13 +34,18 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 
-  app.use('/api/jobs', require('./routes/api/jobs'));
-
   //testing endpoint....
   // app.get('/api/jobs', (req, res) => {
   //   console.log("JOBS REQUESTED!!!");
   //   res.json("HERES YOUR JOBS!!!");
   // });
+  const Job = require('./models/Job');
+  app.get('/api/jobs', (req, res) => {
+    Job.find()
+      .then(jobs => res.json(jobs));
+    // Job.find()
+    //   .then(res => console.log(res));
+  });
 
   //end testing...
 } else {
