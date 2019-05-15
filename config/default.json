@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://viktorAdmin:Gammal1Ukkeli1Hoppar!1@jobs-7899h.mongodb.net/test?retryWrites=true",
+  "mongoURI": "PUT MONGODB URI HERE",
   "jwtSecret": "sl_myJwtSecret"
 }
