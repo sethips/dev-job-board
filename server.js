@@ -24,18 +24,13 @@ mongoose
 //disabled for testing.....
 //app.use('/api/jobs', require('./routes/api/jobs'));
 
-//Static file declaration
-//not sure...
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
   console.log("in production");
   app.use(express.static(path.join(__dirname, 'client/build')));
 
-  app.get('', (req, res) => {
+  app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
   //testing endpoint....
